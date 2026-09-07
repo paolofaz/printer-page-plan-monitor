@@ -1,0 +1,12 @@
+{
+  "domain": "printer_page_plan_monitor",
+  "name": "Printer Page Plan Monitor for HP Instant Ink",
+  "codeowners": ["@paolofaz"],
+  "config_flow": true,
+  "documentation": "https://github.com/paolofaz/printer-page-plan-monitor",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/paolofaz/printer-page-plan-monitor/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

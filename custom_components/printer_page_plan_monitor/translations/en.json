@@ -1,0 +1,94 @@
+{
+  "title": "Printer Page Plan Monitor for HP Instant Ink",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Printer Page Plan Monitor for HP Instant Ink",
+        "description": "Connect locally to a compatible printer and initialize the current page-plan cycle from the values shown by your subscription account.",
+        "data": {
+          "host": "Printer IP / hostname",
+          "renewal_day": "Monthly renewal day",
+          "monthly_pages": "Pages included in the monthly plan",
+          "monthly_used_today": "Monthly-plan pages used so far",
+          "rollover_total_today": "Rollover pages shown for this cycle",
+          "rollover_used_today": "Rollover pages used so far",
+          "rollover_max": "Maximum rollover balance"
+        },
+        "data_description": {
+          "rollover_total_today": "Enter the total rollover allowance shown by the subscription account (for example, 73 in '0 used of 73').",
+          "rollover_used_today": "Enter how many rollover pages have already been used in the current cycle.",
+          "rollover_max": "Enter the maximum rollover balance for your plan. For a 50-page plan with a 150-page rollover cap, enter 150."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to the printer or the SubscriptionImpressions field is unavailable.",
+      "monthly_used_too_high": "Monthly-plan pages used cannot exceed the monthly allowance.",
+      "rollover_total_too_high": "The rollover allowance shown for this cycle cannot exceed the configured rollover maximum.",
+      "rollover_used_too_high": "Rollover pages used cannot exceed the rollover allowance shown for this cycle."
+    },
+    "abort": {
+      "already_configured": "This printer is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Realign Printer Page Plan Monitor for HP Instant Ink",
+        "description": "Enter the values currently shown by the subscription account. Saving creates a new anchor at the printer's current local page counter.",
+        "data": {
+          "renewal_day": "Monthly renewal day",
+          "monthly_pages": "Pages included in the monthly plan",
+          "monthly_used_today": "Monthly-plan pages used so far",
+          "rollover_total_today": "Rollover pages shown for this cycle",
+          "rollover_used_today": "Rollover pages used so far",
+          "rollover_max": "Maximum rollover balance"
+        },
+        "data_description": {
+          "rollover_total_today": "Enter the total rollover allowance shown by the subscription account.",
+          "rollover_used_today": "Enter how many rollover pages have already been used in the current cycle.",
+          "rollover_max": "Enter the maximum rollover balance for your plan."
+        }
+      }
+    },
+    "error": {
+      "monthly_used_too_high": "Monthly-plan pages used cannot exceed the monthly allowance.",
+      "rollover_total_too_high": "The rollover allowance shown for this cycle cannot exceed the configured rollover maximum.",
+      "rollover_used_too_high": "Rollover pages used cannot exceed the rollover allowance shown for this cycle."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "subscription_impressions": {
+        "name": "Subscription page counter"
+      },
+      "pages_used_cycle": {
+        "name": "Pages used in current cycle"
+      },
+      "monthly_remaining": {
+        "name": "Monthly pages remaining"
+      },
+      "rollover_remaining": {
+        "name": "Rollover pages remaining"
+      },
+      "total_remaining": {
+        "name": "Total pages remaining"
+      },
+      "next_renewal": {
+        "name": "Next renewal"
+      },
+      "ink_black": {
+        "name": "Black ink"
+      },
+      "ink_cyan": {
+        "name": "Cyan ink"
+      },
+      "ink_magenta": {
+        "name": "Magenta ink"
+      },
+      "ink_yellow": {
+        "name": "Yellow ink"
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "title": "Printer Page Plan Monitor for HP Instant Ink",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Printer Page Plan Monitor for HP Instant Ink",
+        "description": "Collegamento locale a una stampante compatibile e inizializzazione del ciclo corrente usando i valori mostrati dall'account dell'abbonamento.",
+        "data": {
+          "host": "IP / hostname della stampante",
+          "renewal_day": "Giorno del rinnovo mensile",
+          "monthly_pages": "Pagine previste dal piano mensile",
+          "monthly_used_today": "Pagine mensili utilizzate finora",
+          "rollover_total_today": "Pagine accumulate mostrate per questo ciclo",
+          "rollover_used_today": "Pagine accumulate utilizzate finora",
+          "rollover_max": "Massimo pagine accumulate"
+        },
+        "data_description": {
+          "rollover_total_today": "Inserisci il totale delle pagine accumulate mostrato dall'account (per esempio 73 in '0 utilizzate su 73').",
+          "rollover_used_today": "Inserisci quante pagine accumulate sono già state utilizzate nel ciclo corrente.",
+          "rollover_max": "Inserisci il limite massimo di accumulo del tuo piano. Con un piano da 50 e limite di 150, inserisci 150."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossibile collegarsi alla stampante oppure il campo SubscriptionImpressions non è disponibile.",
+      "monthly_used_too_high": "Le pagine mensili utilizzate non possono superare la quota mensile.",
+      "rollover_total_too_high": "Le pagine accumulate mostrate per il ciclo non possono superare il massimo accumulo configurato.",
+      "rollover_used_too_high": "Le pagine accumulate utilizzate non possono superare il totale accumulato mostrato per il ciclo."
+    },
+    "abort": {
+      "already_configured": "Questa stampante è già configurata."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Riallinea Printer Page Plan Monitor for HP Instant Ink",
+        "description": "Inserisci i valori attualmente mostrati dall'account dell'abbonamento. Salvando, il saldo viene ri-ancorato al contatore locale corrente della stampante.",
+        "data": {
+          "renewal_day": "Giorno del rinnovo mensile",
+          "monthly_pages": "Pagine previste dal piano mensile",
+          "monthly_used_today": "Pagine mensili utilizzate finora",
+          "rollover_total_today": "Pagine accumulate mostrate per questo ciclo",
+          "rollover_used_today": "Pagine accumulate utilizzate finora",
+          "rollover_max": "Massimo pagine accumulate"
+        },
+        "data_description": {
+          "rollover_total_today": "Inserisci il totale delle pagine accumulate mostrato dall'account.",
+          "rollover_used_today": "Inserisci quante pagine accumulate sono già state utilizzate nel ciclo corrente.",
+          "rollover_max": "Inserisci il limite massimo di accumulo previsto dal tuo piano."
+        }
+      }
+    },
+    "error": {
+      "monthly_used_too_high": "Le pagine mensili utilizzate non possono superare la quota mensile.",
+      "rollover_total_too_high": "Le pagine accumulate mostrate per il ciclo non possono superare il massimo accumulo configurato.",
+      "rollover_used_too_high": "Le pagine accumulate utilizzate non possono superare il totale accumulato mostrato per il ciclo."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "subscription_impressions": {
+        "name": "Contatore pagine abbonamento"
+      },
+      "pages_used_cycle": {
+        "name": "Pagine utilizzate nel ciclo"
+      },
+      "monthly_remaining": {
+        "name": "Pagine mensili residue"
+      },
+      "rollover_remaining": {
+        "name": "Pagine accumulate residue"
+      },
+      "total_remaining": {
+        "name": "Pagine totali residue"
+      },
+      "next_renewal": {
+        "name": "Prossimo rinnovo"
+      },
+      "ink_black": {
+        "name": "Inchiostro nero"
+      },
+      "ink_cyan": {
+        "name": "Inchiostro ciano"
+      },
+      "ink_magenta": {
+        "name": "Inchiostro magenta"
+      },
+      "ink_yellow": {
+        "name": "Inchiostro giallo"
+      }
+    }
+  }
+}
