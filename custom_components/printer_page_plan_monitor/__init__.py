@@ -65,7 +65,7 @@ except (aiohttp.ClientError, TimeoutError, ValueError) as err:
     ) from err
 
 await coordinator.async_config_entry_first_refresh()
-    entry.runtime_data = RuntimeData(coordinator=coordinator)
+entry.runtime_data = RuntimeData(coordinator=coordinator)
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     return True
 
