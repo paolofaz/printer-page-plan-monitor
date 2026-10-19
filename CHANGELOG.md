@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1
+- Fixed integration setup when the printer is temporarily unavailable.
+- Added ConfigEntryNotReady handling during coordinator initialization.
+- Home Assistant now automatically retries setup after connection failures.
+- 
 ## 1.0.0
 
 - First public release.
