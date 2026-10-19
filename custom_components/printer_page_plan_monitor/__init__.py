@@ -5,9 +5,8 @@ from dataclasses import dataclass
 import aiohttp
 
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.exceptions import ConfigEntryNotReady
-
 from homeassistant.core import HomeAssistant
+from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
 from .client import LEDMPrinterClient
@@ -57,15 +56,16 @@ async def async_setup_entry(hass: HomeAssistant, entry: PagePlanConfigEntry) -> 
         rollover_max=rollover_max,
         config_revision=int(data.get(CONF_CONFIG_REVISION, 1)),
     )
-try:
-    await coordinator.async_initialize()
-except (aiohttp.ClientError, TimeoutError, ValueError) as err:
-    raise ConfigEntryNotReady(
-        "Printer unavailable during initialization"
-    ) from err
 
-await coordinator.async_config_entry_first_refresh()
-entry.runtime_data = RuntimeData(coordinator=coordinator)
+    try:
+        await coordinator.async_initialize()
+    except (aiohttp.ClientError, TimeoutError, ValueError) as err:
+        raise ConfigEntryNotReady(
+            "Printer unavailable during initialization"
+        ) from err
+
+    await coordinator.async_config_entry_first_refresh()
+    entry.runtime_data = RuntimeData(coordinator=coordinator)
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     return True
 
